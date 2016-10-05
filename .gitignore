@@ -19,5 +19,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+<<<<<<< HEAD
+=======
+
+>>>>>>> filling-in-layout
 # Ignore Spring files.
 /spring/*.pid
