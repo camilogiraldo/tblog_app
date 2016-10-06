@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
-  .
-  .
-  .
+
   test "valid signup information" do
     get signup_path
     assert_difference 'User.count', 1 do
@@ -14,4 +12,5 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'users/show'
-  end
+ end
+end
