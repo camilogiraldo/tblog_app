@@ -4,4 +4,4 @@
 # TBlog App - a twitter like microblogging
 
 
-This app is deployed automatically on heroku using codeship CI [tblog-app-camilogiraldo.heroku.com](https://tblog-app-camilogiraldo.heroku.com)
+This app is deployed automatically on heroku using codeship CI [tblog-app-camilogiraldo.heroku.com](https://tblog-app-camilogiraldo.heroku.com)	
