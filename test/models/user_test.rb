@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase 
+class UserTest < ActiveSupport::TestCase
 	def setup
 	    @user = User.new(name: "Example User", email: "user@example.com",
 	    	password: "foobar", password_confirmation: "foobar")
@@ -72,7 +72,7 @@ class UserTest < ActiveSupport::TestCase
   test "password should have a minimum length" do
   	@user.password = @user.password_confirmation = "a" * 5
   	assert_not @user.valid?
-  end	
+  end
 
   test "authenticated? should return false for a user with a nil digest" do
     assert_not @user.authenticated?(:remember, '')
@@ -85,5 +85,17 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+	test "should follow and unfollow a user" do
+		michael = users(:michael)
+		archer = users(:archer)
+		assert_not michael.following?(archer)
+		michael.follow(archer)
+		assert michael.following?(archer)
+		assert archer.followers.include?(michael)
+		michael.unfollow(archer)
+		assert_not michael.following?(archer)
+	end
+
 
 end
