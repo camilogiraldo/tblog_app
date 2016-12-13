@@ -80,10 +80,12 @@ class User < ApplicationRecord
 	def feed
 		Micropost.where("user_id = ?", id)
 	end
+
 	# Follow another user
 	def follow(other_user)
-		active_relationships.create(followed_id: other_user.id)
-	end
+    active_relationships.create(followed_id: other_user.id)
+  end
+
 	#unfollow another user
 	def unfollow(other_user)
 		active_relationships.find_by(followed_id: other_user.id).destroy
